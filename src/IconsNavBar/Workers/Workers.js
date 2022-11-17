@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "../../SearchBar/SearchBar";
 import ModalEdit from "./EditWorkers/EditWorkers";
 import styles from "./workers.module.css";
+import AddWorkers from "./AddWorkers/AddWorkers";
 
 const Workers = () => {
   const [error, setError] = useState(null);
@@ -10,6 +10,8 @@ const Workers = () => {
   const [openEdit, setOpenEdit] = useState(false);
   const [edit, setEdit] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
+  const [workers, setWorkers] = useState(false);
+  const [searchWorker, setSearchWorker] = useState("");
 
   const fetchUsers = () => {
     fetch("https://6363cc428a3337d9a2e85694.mockapi.io/API")
@@ -63,7 +65,32 @@ const Workers = () => {
   } else {
     return (
       <>
-        <SearchBar fetchUsers={fetchUsers} />
+        <div className={styles.searchBarPocetna}>
+          <div className={styles.searchBarLijevaStrana}>
+            <input
+              placeholder="Search..."
+              onChange={(e) => setSearchWorker(e.target.value)}
+            />
+          </div>
+          <div className={styles.p}>
+            <p>- WORKERS -</p>
+          </div>
+          <div className={styles.searchBarDesnaStrana}>
+            <img
+              src="./images/user-add.png"
+              alt=""
+              className={styles.searchBarIcon}
+              onClick={() => {
+                setWorkers(true);
+              }}
+            />
+          </div>
+          <>
+            {workers && (
+              <AddWorkers onClose={setWorkers} fetchUsersEdit={fetchUsers} />
+            )}
+          </>
+        </div>
         <table className={styles.tabela}>
           <thead>
             <tr>
@@ -78,43 +105,60 @@ const Workers = () => {
           </thead>
           <hr className={styles.horizontalna_linija} />
           <tbody className={styles.tijelo}>
-            {items.map((item) => {
-              return (
-                <div key={item.id}>
-                  <tr>
-                    <th>{item.Ime}</th>
-                    <th>{item.Prezime}</th>
-                    <th>{item.Drzava}</th>
-                    <th className={styles.posao}>{item.Posao}</th>
-                    <th>$ {item.Plata}</th>
-                    <th className={styles.slika_edit}>
-                      <img
-                        src="./images/edit.png"
-                        alt=""
-                        onClick={() => {
-                          editWorkers(
-                            item.Ime,
-                            item.Prezime,
-                            item.Drzava,
-                            item.Posao,
-                            item.Plata,
-                            item.id
-                          );
-                          setOpenEdit(true);
-                        }}
-                      />
-                      <img
-                        src="./images/delete-user.png"
-                        alt=""
-                        onClick={(e) => {
-                          deleteRow(item.id, e);
-                        }}
-                      />
-                    </th>
-                  </tr>
-                </div>
-              );
-            })}
+            {items
+              .filter((value) => {
+                if (searchWorker === "") {
+                  return value;
+                } else if (
+                  value.Ime.toLowerCase().includes(searchWorker.toLowerCase()) +
+                  value.Prezime.toLowerCase().includes(
+                    searchWorker.toLowerCase()
+                  ) +
+                  value.Drzava.toLowerCase().includes(
+                    searchWorker.toLowerCase()
+                  ) +
+                  value.Posao.toLowerCase().includes(searchWorker.toLowerCase())
+                ) {
+                  return value;
+                }
+              })
+              .map((item) => {
+                return (
+                  <div key={item.id}>
+                    <tr>
+                      <th>{item.Ime}</th>
+                      <th>{item.Prezime}</th>
+                      <th>{item.Drzava}</th>
+                      <th className={styles.posao}>{item.Posao}</th>
+                      <th>$ {item.Plata}</th>
+                      <th className={styles.slika_edit}>
+                        <img
+                          src="./images/edit.png"
+                          alt=""
+                          onClick={() => {
+                            editWorkers(
+                              item.Ime,
+                              item.Prezime,
+                              item.Drzava,
+                              item.Posao,
+                              item.Plata,
+                              item.id
+                            );
+                            setOpenEdit(true);
+                          }}
+                        />
+                        <img
+                          src="./images/delete-user.png"
+                          alt=""
+                          onClick={(e) => {
+                            deleteRow(item.id, e);
+                          }}
+                        />
+                      </th>
+                    </tr>
+                  </div>
+                );
+              })}
           </tbody>
         </table>
 

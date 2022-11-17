@@ -14,7 +14,6 @@ const ModalAdd = (props) => {
   const businessRefAdd = useRef();
   const salaryRefAdd = useRef();
 
-  //NE TREBA
   const [data, setData] = useState({
     Name: "",
     Surname: "",
@@ -25,6 +24,7 @@ const ModalAdd = (props) => {
 
   const submit = (e) => {
     e.preventDefault();
+
     axios
       .post("https://6363cc428a3337d9a2e85694.mockapi.io/API", {
         Ime: nameRefAdd.current.value,
@@ -43,11 +43,6 @@ const ModalAdd = (props) => {
       });
   };
 
-  //   useEffect(() => {
-  //     submit();
-  //   }, []);
-
-  //NE TREBA
   const handleWorker = (e) => {
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;
@@ -65,8 +60,9 @@ const ModalAdd = (props) => {
         <div className={styles.h2}>
           <h2>Add Workers</h2>
         </div>
-        <div className={styles.inputModals}>
+        <div className={styles.inputModals} name="myForm">
           <input
+            name="fname"
             onChange={(e) => handleWorker(e)}
             type="text"
             ref={nameRefAdd}
@@ -114,7 +110,6 @@ const ModalAdd = (props) => {
 
           <div className={styles.buttons}>
             <button className={styles.add}>ADD WORKER</button>
-
             <button
               className={styles.close}
               onClick={() => {

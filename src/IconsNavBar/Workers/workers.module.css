@@ -62,3 +62,47 @@
 .horizontalna_linija {
   border: 1px solid black;
 }
+
+.searchBarPocetna {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 60px;
+  margin-right: 56px;
+  margin-bottom: 15px;
+  height: 50px;
+  align-items: center;
+}
+
+.searchBarLijevaStrana {
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+  height: 35px;
+}
+
+.searchBarIcon {
+  width: 37px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.searchBarDesnaStrana img {
+  cursor: pointer;
+}
+
+.searchBarLijevaStrana input {
+  width: 220px;
+}
+
+.p {
+  display: flex;
+  align-items: center;
+  width: 28rem;
+}
+
+.p p {
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
