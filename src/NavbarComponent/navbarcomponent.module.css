@@ -1,0 +1,88 @@
+/* .navBarGlavni {
+  display: flex;
+} */
+
+.horizontalna_linija {
+  border: 1px solid #b5b1b1;
+  box-shadow: 0px 4px 6px -1px rgba(112, 102, 102, 1);
+  -webkit-box-shadow: 0px 2px 3px 0px rgb(118 109 109);
+  -moz-box-shadow: 0px 4px 6px -1px rgba(112, 102, 102, 1);
+  margin: 0px 0px 20px 0px;
+}
+
+.divOdvajanje {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lijeva_strana_icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px 5px 20px;
+  width: 280px;
+  align-items: center;
+  margin-top: -15px;
+}
+
+.home_main {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+  align-items: center;
+}
+
+.home_p {
+  cursor: pointer;
+  font-size: 25px;
+  margin: 0;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.hamburger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.home {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.desna_strana_icon {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 40px 5px 40px;
+  width: 400px;
+  align-items: center;
+  text-align: center;
+}
+
+.desna_strana_icon div img {
+  width: 40px;
+  height: 41px;
+  cursor: pointer;
+}
+
+.desna_strana_icon div p {
+  margin: 0;
+  cursor: pointer;
+}
+
+.homeMain {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+}
+
+.homeMain p {
+  cursor: pointer;
+  font-size: 25px;
+  margin: 0;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 5px;
+}

@@ -1,0 +1,51 @@
+.menuButton:active {
+  border: none;
+}
+
+.menuButton img {
+  width: 40px;
+  height: 40px;
+}
+
+.menuButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menuButton div img {
+  width: 45px;
+  height: 45px;
+}
+
+.menuButton div p {
+  cursor: pointer;
+  font-size: 21px;
+  margin: 0;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.menuButton:hover {
+  scale: 1.15;
+  transition: 300ms;
+}
+.active {
+  scale: 1.15;
+}
+.active p {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+}
+.active div p {
+  cursor: pointer;
+  font-size: 21px;
+  margin: 0;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.menuButton p {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}

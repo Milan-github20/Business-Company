@@ -1,0 +1,41 @@
+.searchBarPocetna {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 60px;
+  margin-right: 56px;
+  margin-bottom: 15px;
+  height: 50px;
+}
+
+.searchBarLijevaStrana {
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+}
+
+.searchBarIcon {
+  width: 37px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.searchBarDesnaStrana img {
+  cursor: pointer;
+}
+
+.searchBarLijevaStrana input {
+  width: 220px;
+}
+
+.p {
+  display: flex;
+  align-items: center;
+  width: 28rem;
+}
+
+.p p {
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}

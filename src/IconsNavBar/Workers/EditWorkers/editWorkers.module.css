@@ -1,0 +1,179 @@
+.modalEdit {
+  z-index: 2;
+  width: 23vw;
+  background-color: rgba(218, 219, 220, 1);
+  margin-top: 4rem;
+  height: 26rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+  flex-direction: column;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inputModalsEdit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 22rem;
+  align-items: center;
+}
+
+.h2Edit h2 {
+  margin-top: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding-bottom: 11px;
+  color: ghostwhite;
+}
+
+.closeModalEdit {
+  max-width: 100%;
+  display: flex;
+  height: 20px;
+  border-radius: 30px 30px 0px 0px;
+  justify-content: right;
+  padding: 20px 30px 0px 0px;
+  background-color: #009933;
+}
+
+.h2Edit {
+  background-color: #009933;
+}
+
+.spanXEdit {
+  z-index: 1;
+  font-size: 30px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  color: ghostwhite;
+}
+
+.spanXEdit:hover {
+  color: rgba(218, 219, 220, 1);
+}
+
+.nameEdit {
+  display: flex;
+  margin: 10px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 87%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.surnameEdit {
+  margin: 10px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 87%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.countryEdit {
+  margin: 10px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 87%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.businessEdit {
+  margin: 10px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 87%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.salaryEdit {
+  margin: 10px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 87%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.buttonsEdit {
+  display: flex;
+  margin-top: 10px;
+  width: 80%;
+  justify-content: space-around;
+  font-family: "Inter", sans-serif;
+}
+
+.addEdit {
+  margin: 10px;
+  height: 31px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #009933;
+  color: white;
+}
+
+.addEdit:hover {
+  background-color: #00802b;
+}
+
+.closeEdit {
+  margin: 10px;
+  height: 31px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #e60000;
+  color: white;
+}
+
+.closeEdit:hover {
+  background-color: #cc0000;
+}
+
+.backdropEdit {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
