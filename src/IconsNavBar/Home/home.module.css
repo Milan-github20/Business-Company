@@ -96,6 +96,7 @@
   height: 45px;
   font-size: 17px;
   cursor: pointer;
+  position: absolute;
 
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -103,4 +104,9 @@
 
 .btn:hover {
   box-shadow: none;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+.page {
+  margin-top: -30px;
 }
