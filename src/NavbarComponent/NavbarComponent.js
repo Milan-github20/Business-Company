@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./navbarcomponent.module.css";
 import Contact from "../IconsNavBar/Contact/Contact";
-import Experts from "../IconsNavBar/Experts/Experts";
 import Home from "../IconsNavBar/Home/Home";
 import Info from "../IconsNavBar/Info/Info";
 import Location from "../IconsNavBar/Location/Location";
 import Workers from "../IconsNavBar/Workers/Workers";
 import ButtonMenuNav from "../ButtonMenuNav/ButtonMenuNav";
+import Bosses from "../IconsNavBar/Bosses/Bosses";
 
 const NavbarComponent = () => {
   const [items, setItems] = useState("HOME");
@@ -37,9 +37,9 @@ const NavbarComponent = () => {
             <img src="./images/users.png" alt="" />
             <p>Workers</p>
           </ButtonMenuNav>
-          <ButtonMenuNav name={"Experts"} active={items} select={handleItems}>
+          <ButtonMenuNav name={"Bosses"} active={items} select={handleItems}>
             <img src="./images/diploma.png" alt="" />
-            <p>Experts</p>
+            <p>Bosses</p>
           </ButtonMenuNav>
           <ButtonMenuNav name={"Location"} active={items} select={handleItems}>
             <img src="./images/map-marker.png" alt="" />
@@ -59,7 +59,7 @@ const NavbarComponent = () => {
       <div>
         {items === "HOME" && <Home />}
         {items === "Workers" && <Workers />}
-        {items === "Experts" && <Experts />}
+        {items === "Bosses" && <Bosses />}
         {items === "Location" && <Location />}
         {items === "Contact" && <Contact />}
         {items === "About us" && <Info />}

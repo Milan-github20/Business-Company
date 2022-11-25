@@ -52,7 +52,7 @@
 }
 
 .slika_prazno {
-  width: 20px !important;
+  width: 165px !important;
 }
 
 .posao {
@@ -99,7 +99,7 @@
 .p {
   display: flex;
   align-items: center;
-  width: 28rem;
+  width: 25rem;
 }
 
 .p p {

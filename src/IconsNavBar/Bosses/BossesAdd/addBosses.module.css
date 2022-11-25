@@ -1,4 +1,4 @@
-.modalEdit {
+.modal {
   z-index: 2;
   width: 23vw;
   background-color: rgba(218, 219, 220, 1);
@@ -14,7 +14,7 @@
   transform: translateX(-50%);
 }
 
-.inputModalsEdit {
+.inputModals {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.h2Edit h2 {
+.h2 h2 {
   margin-top: 0;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -31,33 +31,32 @@
   color: ghostwhite;
 }
 
-.closeModalEdit {
+.closeModal {
   max-width: 100%;
   display: flex;
   height: 30px;
   border-radius: 30px 30px 0px 0px;
   justify-content: right;
   padding: 20px 30px 0px 0px;
-  background-color: #009933;
+  background-color: #0042df;
 }
 
-.h2Edit {
-  background-color: #009933;
+.h2 {
+  background-color: #0042df;
 }
 
-.spanXEdit {
-  z-index: 1;
+.spanX {
   font-size: 30px;
   cursor: pointer;
   font-family: "Inter", sans-serif;
   color: ghostwhite;
 }
 
-.spanXEdit:hover {
+.spanX:hover {
   color: rgba(218, 219, 220, 1);
 }
 
-.nameEdit {
+.name {
   display: flex;
   height: 30px;
   border-radius: 10px;
@@ -72,7 +71,7 @@
   margin-top: 15px;
 }
 
-.surnameEdit {
+.surname {
   height: 30px;
   border-radius: 10px;
   border: none;
@@ -85,7 +84,7 @@
   margin-bottom: 0;
 }
 
-.countryEdit {
+.country {
   height: 30px;
   border-radius: 10px;
   border: none;
@@ -98,7 +97,7 @@
   margin-bottom: 0;
 }
 
-.businessEdit {
+.salary {
   height: 30px;
   border-radius: 10px;
   border: none;
@@ -111,20 +110,7 @@
   margin-bottom: 0;
 }
 
-.salaryEdit {
-  height: 30px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  text-align: center;
-  width: 87%;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 0;
-}
-
-.buttonsEdit {
+.buttons {
   display: flex;
   margin-top: 10px;
   width: 80%;
@@ -132,7 +118,7 @@
   font-family: "Inter", sans-serif;
 }
 
-.addEdit {
+.add {
   margin: 10px;
   height: 31px;
   width: 120px;
@@ -142,15 +128,15 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  background-color: #009933;
+  background-color: #0042df;
   color: white;
 }
 
-.addEdit:hover {
-  background-color: #00802b;
+.add:hover {
+  background-color: blue;
 }
 
-.closeEdit {
+.close {
   margin: 10px;
   height: 31px;
   width: 120px;
@@ -164,11 +150,11 @@
   color: white;
 }
 
-.closeEdit:hover {
+.close:hover {
   background-color: #cc0000;
 }
 
-.backdropEdit {
+.backdrop {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   overflow-x: hidden;

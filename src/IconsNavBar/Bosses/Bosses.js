@@ -1,56 +1,55 @@
-import React, { useEffect, useState } from "react";
-import ModalEdit from "./EditWorkers/EditWorkers";
-import styles from "./workers.module.css";
-import AddWorkers from "./AddWorkers/AddWorkers";
+import React, { useState, useEffect } from "react";
+import styles from "./bosses.module.css";
+import AddBosses from "./BossesAdd/AddBosses";
+import ModalEditBoss from "./BossesEdit/EditBosses";
 
-const Workers = () => {
+const Bosses = () => {
+  const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-  const [openEdit, setOpenEdit] = useState(false);
-  const [edit, setEdit] = useState([]);
-  const [isEditing, setIsEditing] = useState(false);
-  const [workers, setWorkers] = useState(false);
-  const [searchWorker, setSearchWorker] = useState("");
+  const [bosses, setBosses] = useState(false);
+  const [editBoss, setEditBoss] = useState([]);
+  const [isEditingBoss, setIsEditingBoss] = useState(false);
+  const [openEditBoss, setOpenEditBoss] = useState(false);
+  const [searchBoss, setSearchBoss] = useState("");
 
-  const fetchUsers = () => {
-    fetch("https://6363cc428a3337d9a2e85694.mockapi.io/API")
+  const fetchBosses = () => {
+    fetch("https://6363cc428a3337d9a2e85694.mockapi.io/Bosses")
       .then((res) => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
           setItems(result);
+          setIsLoaded(true);
         },
         (error) => {
-          setIsLoaded(true);
           setError(error);
+          setIsLoaded(true);
         }
       );
   };
 
   useEffect(() => {
-    fetchUsers();
+    fetchBosses();
   }, []);
 
-  const editWorkers = (Ime, Prezime, Drzava, Posao, Plata, id) => {
+  const editBosses = (Ime, Prezime, Drzava, Plata, id) => {
     const data = {
       Ime: Ime,
       Prezime: Prezime,
       Drzava: Drzava,
-      Posao: Posao,
       Plata: Plata,
       id: id,
     };
 
-    setEdit(data);
-    setIsEditing(true);
+    setEditBoss(data);
+    setIsEditingBoss(true);
   };
 
-  const deleteRow = (id, e) => {
+  const deleteRowBosses = (id, e) => {
     e.preventDefault();
-    if (window.confirm("Are you sure you want to delete the worker?")) {
+    if (window.confirm("Are you sure you want to delete the Boss?")) {
       e.target.parentElement.parentElement.remove();
-      fetch(`https://6363cc428a3337d9a2e85694.mockapi.io/API/${id}`, {
+      fetch(`https://6363cc428a3337d9a2e85694.mockapi.io/Bosses/${id}`, {
         method: "DELETE",
       }).then(() => {
         alert("You have successfully deleted the worker!");
@@ -69,11 +68,13 @@ const Workers = () => {
           <div className={styles.searchBarLijevaStrana}>
             <input
               placeholder="Search..."
-              onChange={(e) => setSearchWorker(e.target.value)}
+              onChange={(e) => {
+                setSearchBoss(e.target.value);
+              }}
             />
           </div>
           <div className={styles.p}>
-            <p>WORKERS</p>
+            <p>BOSSES</p>
           </div>
           <div className={styles.searchBarDesnaStrana}>
             <img
@@ -81,13 +82,13 @@ const Workers = () => {
               alt=""
               className={styles.searchBarIcon}
               onClick={() => {
-                setWorkers(true);
+                setBosses(true);
               }}
             />
           </div>
           <>
-            {workers && (
-              <AddWorkers onClose={setWorkers} fetchUsersEdit={fetchUsers} />
+            {bosses && (
+              <AddBosses onClose={setBosses} fetchBossesRefresh={fetchBosses} />
             )}
           </>
         </div>
@@ -97,35 +98,31 @@ const Workers = () => {
               <th>Name</th>
               <th>Surname</th>
               <th>Country</th>
-              <th className={styles.posao}>Business</th>
               <th>Salary</th>
               <th className={styles.slika_prazno}></th>
-              <th className={styles.slika_prazno}></th>
             </tr>
+            <hr className={styles.horizontalna_linija} />
           </thead>
-          <hr className={styles.horizontalna_linija} />
           <tbody className={styles.tijelo}>
             {items
               .filter((value) => {
-                if (searchWorker === "") {
+                if (searchBoss === "") {
                   return value;
                 } else if (
                   value.Ime.toLowerCase().includes(
-                    searchWorker.trim().toLowerCase()
+                    searchBoss.trim().toLowerCase()
                   ) ||
                   value.Prezime.toLowerCase().includes(
-                    searchWorker.trim().toLowerCase()
+                    searchBoss.trim().toLowerCase()
                   ) ||
-                  value.Drzava.trim()
-                    .toLowerCase()
-                    .includes(searchWorker.trim().toLowerCase()) ||
-                  value.Posao.trim()
-                    .toLowerCase()
-                    .includes(searchWorker.trim().toLowerCase())
+                  value.Drzava.toLowerCase().includes(
+                    searchBoss.trim().toLowerCase()
+                  )
                 ) {
                   return value;
                 }
               })
+
               .map((item) => {
                 return (
                   <div key={item.id}>
@@ -133,29 +130,25 @@ const Workers = () => {
                       <th>{item.Ime}</th>
                       <th>{item.Prezime}</th>
                       <th>{item.Drzava}</th>
-                      <th className={styles.posao}>{item.Posao}</th>
                       <th>$ {item.Plata}</th>
                       <th className={styles.slika_edit}>
                         <img
                           src="./images/edit.png"
-                          alt=""
                           onClick={() => {
-                            editWorkers(
+                            editBosses(
                               item.Ime,
                               item.Prezime,
                               item.Drzava,
-                              item.Posao,
                               item.Plata,
                               item.id
                             );
-                            setOpenEdit(true);
+                            setOpenEditBoss(true);
                           }}
                         />
                         <img
                           src="./images/delete-user.png"
-                          alt=""
                           onClick={(e) => {
-                            deleteRow(item.id, e);
+                            deleteRowBosses(item.id, e);
                           }}
                         />
                       </th>
@@ -166,12 +159,11 @@ const Workers = () => {
           </tbody>
         </table>
 
-        {openEdit && isEditing && (
-          <ModalEdit
-            onCloseEdit={setOpenEdit}
-            fetchUsers={fetchUsers}
-            items={items}
-            edit={edit}
+        {openEditBoss && isEditingBoss && (
+          <ModalEditBoss
+            onCloseEdit={setOpenEditBoss}
+            editBoss={editBoss}
+            fetchBosses={fetchBosses}
           />
         )}
       </>
@@ -179,4 +171,4 @@ const Workers = () => {
   }
 };
 
-export default Workers;
+export default Bosses;
