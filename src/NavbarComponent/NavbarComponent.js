@@ -3,7 +3,6 @@ import styles from "./navbarcomponent.module.css";
 import Contact from "../IconsNavBar/Contact/Contact";
 import Home from "../IconsNavBar/Home/Home";
 import Info from "../IconsNavBar/Info/Info";
-import Location from "../IconsNavBar/Location/Location";
 import Workers from "../IconsNavBar/Workers/Workers";
 import ButtonMenuNav from "../ButtonMenuNav/ButtonMenuNav";
 import Bosses from "../IconsNavBar/Bosses/Bosses";
@@ -41,10 +40,6 @@ const NavbarComponent = () => {
             <img src="./images/diploma.png" alt="" />
             <p>Bosses</p>
           </ButtonMenuNav>
-          <ButtonMenuNav name={"Location"} active={items} select={handleItems}>
-            <img src="./images/map-marker.png" alt="" />
-            <p>Location</p>
-          </ButtonMenuNav>
           <ButtonMenuNav name={"Contact"} active={items} select={handleItems}>
             <img src="./images/form.png" alt="" />
             <p>Contact</p>
@@ -60,7 +55,6 @@ const NavbarComponent = () => {
         {items === "HOME" && <Home />}
         {items === "Workers" && <Workers />}
         {items === "Bosses" && <Bosses />}
-        {items === "Location" && <Location />}
         {items === "Contact" && <Contact />}
         {items === "About us" && <Info />}
       </div>

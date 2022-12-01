@@ -1,0 +1,159 @@
+.div {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.div_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  margin-top: -22px;
+}
+
+.directions {
+  height: 550px;
+  background-color: white;
+  margin-right: 10px;
+  padding: 10px;
+  width: 700px;
+}
+
+.get_in_touch {
+  height: 550px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  padding: 10px;
+  width: 700px;
+}
+
+.get_in_touch h2 {
+  margin-left: 60px;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.inputFields textarea {
+  width: 79%;
+  padding: 10px 12px;
+  border: 1px solid gray;
+  font-size: 16px;
+  height: 150px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+}
+
+.inputFields textarea:focus {
+  outline: none;
+}
+
+.input {
+  padding: 10px 12px;
+  width: 79%;
+  border: none;
+  margin-bottom: 15px;
+  height: 25px;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  border: 1px solid gray;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.inputFields button {
+  width: 20%;
+}
+
+.name_number {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  font-family: "Inter", sans-serif;
+}
+
+.name_number input:focus {
+  outline: none;
+}
+
+.name_number input {
+  display: flex;
+  padding: 10px 12px;
+  width: 37%;
+  height: 25px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+.name_name {
+  margin-right: 5px;
+}
+
+.number_number {
+  margin-left: 5px;
+}
+
+.copyright {
+  background-color: transparent;
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  height: 66px;
+  align-items: flex-end;
+  color: black;
+}
+
+.inputFields button {
+  margin-top: 30px;
+  width: 130px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.maps {
+  height: 340px;
+  width: 100%;
+}
+
+.p_maps {
+  font-family: "Inter", sans-serif;
+  font-weight: lighter;
+}
+
+.leftSide {
+  padding: 10px 40px 10px 40px;
+}
+
+.leftSide_h2 {
+  margin-left: 40px;
+  font-family: "Inter", sans-serif;
+}
+
+.leftSide_h2 h2 {
+  font-size: 30px;
+  margin: 20px 0px 20px 0px;
+}
