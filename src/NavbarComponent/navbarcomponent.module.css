@@ -17,9 +17,9 @@
 
 .lijeva_strana_icon {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   padding: 20px 40px 5px 20px;
-  width: 280px;
+  width: 310px;
   align-items: center;
   margin-top: -15px;
 }

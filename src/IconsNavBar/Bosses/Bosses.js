@@ -134,6 +134,7 @@ const Bosses = () => {
                       <th className={styles.slika_edit}>
                         <img
                           src="./images/edit.png"
+                          alt=""
                           onClick={() => {
                             editBosses(
                               item.Ime,
@@ -147,6 +148,7 @@ const Bosses = () => {
                         />
                         <img
                           src="./images/delete-user.png"
+                          alt=""
                           onClick={(e) => {
                             deleteRowBosses(item.id, e);
                           }}

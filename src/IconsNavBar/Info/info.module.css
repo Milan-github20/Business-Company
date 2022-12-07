@@ -1,0 +1,126 @@
+.div {
+  background-image: url("../../../public/images/pozadina-plava.jpg");
+  max-width: 100vw;
+  /* height: 86vh; */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: -21px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 110vh;
+  position: relative;
+  font-family: "Inter", sans-serif;
+}
+
+.div h1 {
+  margin: 0;
+}
+
+.div_div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 850px;
+  justify-content: center;
+  width: 80%;
+}
+
+.div_div_div {
+  width: 620px;
+}
+
+.div_div_div h1 {
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  color: white;
+}
+
+.div_div_div p {
+  color: white;
+  font-size: 15px;
+}
+
+.workersAndBoss {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  margin: 0;
+}
+
+.workers {
+  display: flex;
+  width: 400px;
+  align-items: center;
+}
+
+.workers img {
+  width: 35px;
+  height: 35px;
+}
+
+.workers p {
+  margin-left: 0px;
+}
+
+.bosses {
+  display: flex;
+  width: 400px;
+  align-items: center;
+}
+
+.bosses img {
+  width: 35px;
+  height: 35px;
+}
+
+.bosses p {
+  margin-left: 0px;
+}
+
+.span {
+  color: #0ee951;
+}
+
+.btn {
+  background-color: transparent;
+  margin-top: 15px;
+  border-width: 2px;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #0ee951, #00dabf);
+  box-shadow: 5px 5px 0px 0px #0ee951;
+  color: white;
+  width: 130px;
+  height: 45px;
+  font-size: 17px;
+  cursor: pointer;
+  position: absolute;
+
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: none;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+.page {
+  margin-top: -30px;
+}
+
+.network {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: -30px;
+  margin-top: 20px;
+  width: 280px;
+}
+
+.network img {
+  width: 35px;
+  height: 35px;
+}

@@ -18,7 +18,6 @@ const NavbarComponent = () => {
     <div className={styles.navBarGlavni}>
       <div className={styles.divOdvajanje}>
         <div className={styles.lijeva_strana_icon}>
-          <img src="./images/list.png" alt="" className={styles.hamburger} />
           <ButtonMenuNav
             name={"HOME"}
             active={items}

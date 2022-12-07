@@ -12,6 +12,7 @@
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
+  animation: slide-down 300ms ease-in-out;
 }
 
 .inputModals {
@@ -176,4 +177,14 @@ div label {
 .errorLabel {
   display: flex;
   width: 87%;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -134,6 +134,10 @@
   cursor: pointer;
 }
 
+.inputFields button:hover {
+  background-color: #e5e5e5;
+}
+
 .maps {
   height: 340px;
   width: 100%;

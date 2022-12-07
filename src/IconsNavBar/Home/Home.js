@@ -26,8 +26,12 @@ const Home = (props) => {
                 <p>More than 20 Bosses</p>
               </div>
             </div>
-            <a>
-              <button className={styles.btn}>About us</button>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button className={styles.btn}>Our Linkedin</button>
             </a>
           </div>
         </div>
