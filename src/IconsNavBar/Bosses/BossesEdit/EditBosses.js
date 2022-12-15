@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import styles from "./editBosses.module.css";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BackDrop = () => {
   return <div className={styles.backdropEdit}></div>;
@@ -63,7 +65,16 @@ const ModalEditBoss = (props) => {
         }
       )
       .then(
-        alert("You have successfully edited the Boss!"),
+        toast.success("You have successfully edited the Boss!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }),
         props.onCloseEdit(false),
         props.fetchBosses()
       );

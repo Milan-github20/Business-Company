@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import styles from "./addBosses.module.css";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BackDrop = () => {
   return <div className={styles.backdrop}></div>;
@@ -51,7 +53,16 @@ const ModalAddBosses = (props) => {
         Plata: parseFloat(salaryRefAddBosses.current.value).toFixed(2),
       })
       .then(() => {
-        alert("Daa");
+        toast.success("You have successfully added a Boss!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         props.onClose(false);
         props.fetchBossesRefreshAdd();
       });
@@ -66,7 +77,7 @@ const ModalAddBosses = (props) => {
           </span>
         </div>
         <div className={styles.h2}>
-          <h2>Add Workers</h2>
+          <h2>Add Bosses</h2>
         </div>
         <div className={styles.inputModals}>
           <input

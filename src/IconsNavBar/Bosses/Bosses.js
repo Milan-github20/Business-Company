@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./bosses.module.css";
 import AddBosses from "./BossesAdd/AddBosses";
 import ModalEditBoss from "./BossesEdit/EditBosses";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Bosses = () => {
   const [items, setItems] = useState([]);
@@ -52,7 +54,16 @@ const Bosses = () => {
       fetch(`https://6363cc428a3337d9a2e85694.mockapi.io/Bosses/${id}`, {
         method: "DELETE",
       }).then(() => {
-        alert("You have successfully deleted the worker!");
+        toast.success("You have successfully deleted the worker!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
     }
   };

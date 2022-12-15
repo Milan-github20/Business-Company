@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ModalEdit from "./EditWorkers/EditWorkers";
 import styles from "./workers.module.css";
 import AddWorkers from "./AddWorkers/AddWorkers";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Workers = () => {
   const [error, setError] = useState(null);
@@ -53,7 +55,16 @@ const Workers = () => {
       fetch(`https://6363cc428a3337d9a2e85694.mockapi.io/API/${id}`, {
         method: "DELETE",
       }).then(() => {
-        alert("You have successfully deleted the worker!");
+        toast.success("You have successfully deleted the worker!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
     }
   };

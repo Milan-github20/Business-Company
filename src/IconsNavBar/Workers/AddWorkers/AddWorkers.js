@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import styles from "./addWorkers.module.css";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BackDrop = () => {
   return <div className={styles.backdrop}></div>;
@@ -65,7 +67,16 @@ const ModalAdd = (props) => {
         Plata: parseFloat(salaryRefAdd.current.value).toFixed(2),
       })
       .then((res) => {
-        alert("daa");
+        toast.success("You have successfully added a worker!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         props.onClose(false);
         props.fetchUsersAdd();
       })

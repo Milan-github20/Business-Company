@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import styles from "./editWorkers.module.css";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BackDrop = () => {
   return <div className={styles.backdropEdit}></div>;
@@ -70,9 +72,18 @@ const ModalEdit = (props) => {
         Plata: parseFloat(salaryRefEdit.current.value).toFixed(2),
       })
       .then(
-        alert("You have successfully edited the worker!"),
         props.onCloseEdit(false),
-        props.fetchUsers()
+        props.fetchUsers(),
+        toast.success("You have successfully edited the worker!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
       );
   };
 
